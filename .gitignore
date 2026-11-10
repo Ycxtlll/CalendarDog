@@ -1,0 +1,29 @@
+# Rust / Cargo
+debug/
+target/
+**/*.rs.bk
+*.pdb
+
+# Tauri
+src-tauri/gen/
+
+# Node / Frontend
+node_modules/
+dist/
+*.local
+.vite/
+*.tsbuildinfo
+
+# IDE / OS
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Env / Logs
+.env
+.env.local
+.env.*.local
+*.log

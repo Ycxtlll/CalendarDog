@@ -1,0 +1,26 @@
+{
+  "monthLabel": "{{month}}/{{year}}",
+  "weekdays": {
+    "mon": "Mo",
+    "tue": "Tu",
+    "wed": "We",
+    "thu": "Th",
+    "fri": "Fr",
+    "sat": "Sa",
+    "sun": "Su"
+  },
+  "weekFull": {
+    "mon": "Monday",
+    "tue": "Tuesday",
+    "wed": "Wednesday",
+    "thu": "Thursday",
+    "fri": "Friday",
+    "sat": "Saturday",
+    "sun": "Sunday"
+  },
+  "yi": "Do",
+  "ji": "Avoid",
+  "almanacNone": "—",
+  "holidayOff": "{{name}} (day off)",
+  "holidayWork": "{{name}} (working day)"
+}

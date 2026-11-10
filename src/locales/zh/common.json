@@ -1,0 +1,11 @@
+{
+  "settings": "设置",
+  "save": "保存",
+  "cancel": "取消",
+  "close": "关闭",
+  "today": "今",
+  "pinned": "钉住",
+  "unpinned": "取消钉住",
+  "pinOn": "已钉住，点其他地方不再自动隐藏",
+  "pinOff": "已取消钉住，失焦后自动隐藏"
+}

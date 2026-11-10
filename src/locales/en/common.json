@@ -1,0 +1,11 @@
+{
+  "settings": "Settings",
+  "save": "Save",
+  "cancel": "Cancel",
+  "close": "Close",
+  "today": "Today",
+  "pinned": "Pin",
+  "unpinned": "Unpin",
+  "pinOn": "Pinned — the calendar stays open when you click elsewhere",
+  "pinOff": "Unpinned — the calendar hides when it loses focus"
+}

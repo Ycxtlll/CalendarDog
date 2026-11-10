@@ -1,0 +1,164 @@
+@import "./assets/fonts/fonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * 设计 token：边牧·白天 / 边牧·夜巡
+ * 底色黑白 = Luna 的毛色；唯一的暖色是黄铜狗牌（primary）。
+ * 全部语义类，两主题同构，禁止硬编码色值。
+ */
+@layer base {
+  :root {
+    --background: 0 0% 96%;
+    --card: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
+    --border: 0 0% 90%;
+    --accent: 0 0% 93%;
+    --primary: 36 62% 38%;
+    --primary-foreground: 40 64% 97%;
+    /* 休/节气 = 草木绿；班/节日/周末 = 黄历红 */
+    --holiday-green: 137 33% 36%;
+    --work-red: 4 62% 46%;
+    --festival-red: 4 62% 46%;
+  }
+
+  [data-theme="dark"] {
+    --background: 0 0% 8%;
+    --card: 0 0% 12%;
+    --foreground: 0 0% 93%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 61%;
+    --border: 0 0% 21%;
+    --accent: 0 0% 18%;
+    --primary: 36 62% 61%;
+    --primary-foreground: 30 45% 10%;
+    --holiday-green: 137 28% 62%;
+    --work-red: 8 70% 62%;
+    --festival-red: 8 70% 62%;
+  }
+
+  html,
+  body {
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  body {
+    @apply text-foreground text-sm;
+    font-family:
+      "Segoe UI",
+      system-ui,
+      "Microsoft YaHei UI",
+      sans-serif;
+  }
+}
+
+/* 狗牌入场：从挂环上轻晃一下落定（单次，之后不再动） */
+@keyframes tag-swing {
+  0% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: rotate(4deg);
+  }
+  70% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes overlay-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes modal-out {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+}
+
+.animate-tag-swing {
+  transform-origin: 50% 0;
+  animation: tag-swing 0.45s ease-out;
+}
+.animate-toast-in {
+  animation: toast-in 0.18s ease-out;
+}
+.animate-overlay-in {
+  animation: overlay-in 0.15s ease-out;
+}
+.animate-modal-in {
+  animation: modal-in 0.18s ease-out;
+}
+.animate-overlay-out {
+  animation: overlay-out 0.15s ease-out;
+}
+.animate-modal-out {
+  animation: modal-out 0.15s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-tag-swing,
+  .animate-toast-in,
+  .animate-overlay-in,
+  .animate-modal-in,
+  .animate-overlay-out,
+  .animate-modal-out {
+    animation: none;
+  }
+}
+
+/* 全局细滚动条（设置弹窗内） */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--muted-foreground) / 0.35) transparent;
+}

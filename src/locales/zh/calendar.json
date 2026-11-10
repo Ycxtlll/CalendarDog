@@ -1,0 +1,26 @@
+{
+  "monthLabel": "{{year}}年{{month}}月",
+  "weekdays": {
+    "mon": "一",
+    "tue": "二",
+    "wed": "三",
+    "thu": "四",
+    "fri": "五",
+    "sat": "六",
+    "sun": "日"
+  },
+  "weekFull": {
+    "mon": "星期一",
+    "tue": "星期二",
+    "wed": "星期三",
+    "thu": "星期四",
+    "fri": "星期五",
+    "sat": "星期六",
+    "sun": "星期日"
+  },
+  "yi": "宜",
+  "ji": "忌",
+  "almanacNone": "无",
+  "holidayOff": "{{name}} · 休",
+  "holidayWork": "{{name}} · 班"
+}
