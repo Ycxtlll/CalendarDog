@@ -4,7 +4,7 @@ import { Loader2, RefreshCw } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 import { Checkbox } from "@/components/ui/Checkbox";
-import { LunaMascot } from "@/components/luna/LunaMascot";
+import { LunaTag } from "@/components/luna/LunaTag";
 import { useDelayedUnmount } from "@/lib/useDelayedUnmount";
 import { useModalFocus } from "@/lib/useModalFocus";
 import { updateHolidays } from "@/services/holidayService";
@@ -143,7 +143,7 @@ export function SettingsModal() {
             {t("about")}
           </div>
           <div className="flex items-center gap-3 rounded-md bg-muted/60 p-3">
-            <LunaMascot size={72} />
+            <LunaTag size={72} />
             <div className="min-w-0 text-xs leading-relaxed text-muted-foreground">
               <div className="font-medium text-foreground">{t("lunaProfile")}</div>
               <div className="mt-1">{t("aboutLine")}</div>
@@ -201,7 +201,7 @@ function HolidaySection({
       </div>
       {!current && (
         <div className="flex items-center gap-3 rounded-md border border-dashed border-border p-2">
-          <LunaMascot size={56} />
+          <LunaTag size={56} />
           <div className="flex-1 text-xs">
             <div className="font-medium">{t("noData")}</div>
             <div className="mt-0.5 text-muted-foreground">{t("noDataDesc")}</div>
