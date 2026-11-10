@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { listen } from "@tauri-apps/api/event";
+import { getCurrentWindow } from "@tauri-apps/api/window";
 
 import { Header } from "@/components/Header";
 import { MonthGrid } from "@/components/MonthGrid";
@@ -25,6 +26,23 @@ export default function App() {
     return () => {
       mq.removeEventListener("change", onSchemeChange);
       void unlisten.then((fn) => fn());
+    };
+  }, []);
+
+  useEffect(() => {
+    // 禁用 WebView 默认右键菜单
+    const onContextMenu = (e: MouseEvent) => e.preventDefault();
+    document.addEventListener("contextmenu", onContextMenu);
+    // Esc 隐藏窗口（设置弹窗打开时让给它自己的 Esc 处理）
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      if (useUiStore.getState().settingsOpen) return;
+      void getCurrentWindow().hide();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("contextmenu", onContextMenu);
+      document.removeEventListener("keydown", onKeyDown);
     };
   }, []);
 
